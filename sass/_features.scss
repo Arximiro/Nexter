@@ -1,5 +1,47 @@
 .features {
-  background-color: $color-grey-light-2;
-
   grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // auto-fit used with min-max for columns allows for easy responsive design
+  grid-gap: 6rem;
+  align-items: start; // aligns content inside each feature item to the top of their box
 }
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;  // first column is min-content width, second column is 1fr ie remaining width available
+  grid-gap: 1.5rem 2.5rem; // sets grid gap to 1.5rem for row and 2.5rem for column
+  
+
+  grid-template-areas: "icon heading" "icon text";
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+
+    grid-area: icon;
+  }
+
+  &__text {
+    font-size: 1.7rem;
+
+    grid-area: text;
+  }
+
+  .heading-4 {
+    grid-area: heading;
+  }
+}
+
+// ---Notes---
+// Features is the section amd it is a grid with the 6 feature items.
+// Feature is ALSO its own grid, used to position the content inside each feature element.
+// Since feature is a static grid and the content does not shift inside, this was a good use case for grid-template-areas.
+// Features however is responsive and the grid changes based on viewport size, so grid-template-areas would not work properly here as the grid changes.
+
+// Due to the implicit way items lay themselves out in the grid I didn't need to explicitly set text and heading in its own area, but I did for readability of code.
+// The only one that needed to be set was icon, to make sure if takes up 2 rows, to push the text over to the bottom corner of the feature. The other 2 would have fell in line.
+// For my own sanity and learning purposes I decided to explicitly set the area of text and heading.

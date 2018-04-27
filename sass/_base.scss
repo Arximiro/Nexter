@@ -42,11 +42,7 @@ body {
                          minmax(6rem, 1fr) [center-start]
                         repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) // each column will be between it's min-content width, going to a max of 14rem
                          [center-end] minmax(6rem, 1fr) [full-end];
-
- & > * {
-   font-size: 3rem;
-   padding: 4rem;
- }
+ 
 }
 
 // --- Notes ---
@@ -54,7 +50,7 @@ body {
 // 11 total columns were created
 // The first is 8rem and doesn't change sizes
 // The second is a minimum of 6rem, with a maximum of 1fr
-// The 3rd through 10th have a minimum of the content, with a maximum of 14rem
+// The 3rd through 10th have a minimum of the content width, with a maximum of 14rem
 // The 11th is a minimum of 6rem, with a maximum of 1fr
 
 // The 2nd and 11th columns allow the 8 columns to be centered, since they use 1fr they stretch to fill extra space
