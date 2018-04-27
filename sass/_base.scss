@@ -33,3 +33,32 @@ body {
   font-weight: 300;
   line-height: 1.6;
 }
+
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content); // min-content allows the row to take up as much vertical room as the content
+  grid-template-columns: [sidebar-start]8rem[sidebar-end full-start]  
+                         minmax(6rem, 1fr) [center-start]
+                        repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) // each column will be between it's min-content width, going to a max of 14rem
+                         [center-end] minmax(6rem, 1fr) [full-end];
+
+ & > * {
+   font-size: 3rem;
+   padding: 4rem;
+ }
+}
+
+// --- Notes ---
+// What was done in grid-template-columns is the following:
+// 11 total columns were created
+// The first is 8rem and doesn't change sizes
+// The second is a minimum of 6rem, with a maximum of 1fr
+// The 3rd through 10th have a minimum of the content, with a maximum of 14rem
+// The 11th is a minimum of 6rem, with a maximum of 1fr
+
+// The 2nd and 11th columns allow the 8 columns to be centered, since they use 1fr they stretch to fill extra space
+
+// Each of the column grid lines are named, with some lines having two names. The name order goes as follows:
+// sidebar-start, sidebar-end full-start, center-start col-start 1, col-end 1 col-start 2, ...... col-end 8 center-end, full-end
+//       |                   |                         |     |    |    |    |    |    |    |    |                          |
