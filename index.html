@@ -17,8 +17,33 @@
 
 <body class="container">
   <!-- SIDEBAR -->
-  <div class="sidebar">
-    Sidebar
+  <div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+      <span class="navigation__icon">&nbsp;</span>
+    </label>
+
+    <div class="navigation__background">&nbsp;</div>
+
+    <nav class="navigation__nav">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a href="#about" class="navigation__link" id="navigation__about">About Nexter</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#features" class="navigation__link" id="navigation__features">Features</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#story" class="navigation__link" id="navigation__story">Story</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#homes" class="navigation__link" id="navigation__homes">Homes</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#gallery" class="navigation__link" id="navigation__gallery">Gallery</a>
+        </li>
+      </ul>
+    </nav>
   </div>
   <!-- SIDEBAR -->
 
@@ -41,7 +66,7 @@
 
 
   <!-- FEATURES SECTION -->
-  <section class="features">
+  <section class="features" id="features">
     <div class="feature">
       <svg class="feature__icon">
         <use href="img/sprite.svg#icon-global" />
@@ -95,7 +120,7 @@
 
 
   <!-- STORY SECTION -->
-  <div class="story__pictures">
+  <div class="story__pictures" id="story">
     <img src="img/story-1.jpeg" alt="couple" class="story__img--1">
     <img src="img/story-2.jpeg" alt="new house" class="story__img--2">
   </div>
@@ -114,7 +139,7 @@
 
 
   <!-- HOMES SECTION -->
-  <section class="homes">
+  <section class="homes" id="homes">
     <div class="home">
       <img src="img/house-1.jpeg" alt="house 1" class="home__img">
       <svg class="home__like">
@@ -318,7 +343,7 @@
 
 
   <!-- GALLERY SECTION -->
-  <section class="gallery">
+  <section class="gallery" id="gallery">
     <figure class="gallery__item gallery__item--1">
       <img src="img/gal-1.jpeg" alt="gallery image 1" class="gallery__img">
     </figure>
@@ -369,18 +394,32 @@
   <!-- FOOTER -->
   <footer class="footer">
     <ul class="nav">
-      <li class="nav__item"><a href="#" class="nav__link">Find your dream home</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Request proposal</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Download home planner</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Contact us</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Submit your property</a></li>
-      <li class="nav__item"><a href="#" class="nav__link">Come work with us!</a></li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">Find your dream home</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">Request proposal</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">Download home planner</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">Contact us</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">Submit your property</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">Come work with us!</a>
+      </li>
     </ul>
     <p class="copyright">
       A demo project created by David Ridgley &copy;2018
     </p>
   </footer>
   <!-- FOOTER -->
+
+  <script src="js/functionality.js"></script>
 </body>
 
 </html>
