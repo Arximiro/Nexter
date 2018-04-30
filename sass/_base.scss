@@ -26,6 +26,9 @@ $bp-lg: 75em; //1200px
 $bp-md: 62.5em; //1000
 $bp-sm: 75em;
 
+// -------- SASS VARIABLES END --------
+
+
 *,
 *::before,
 *::after {
@@ -60,15 +63,15 @@ body {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content); // min-content allows the row to take up as much vertical room as the content
   grid-template-columns: [sidebar-start]8rem[sidebar-end full-start]  
                          minmax(6rem, 1fr) [center-start]
-                        repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) // each column will be between it's min-content width, going to a max of 14rem
+                         repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) // each column will be between it's min-content width, going to a max of 14rem
                          [center-end] minmax(6rem, 1fr) [full-end];
 
   @media only screen and (max-width: $bp-md) {
-    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content); // min-content allows the row to take up as much vertical room as the content
-    grid-template-columns: [full-start]  
-                         minmax(6rem, 1fr) [center-start]
-                        repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) // each column will be between it's min-content width, going to a max of 14rem
-                         [center-end] minmax(6rem, 1fr) [full-end];
+    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start]
+                           repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+                           [center-end] minmax(6rem, 1fr) [full-end];
+    // Redo column layout for smaller screens, placing navigation sidebar at top
   }
  
 }
