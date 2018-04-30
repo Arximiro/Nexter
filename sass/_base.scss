@@ -20,6 +20,12 @@ $font-display: 'Josefin Sans', sans-serif;
 .mb-lg { margin-bottom: 4rem; }
 .mb-hg { margin-bottom: 8rem; }
 
+// RESPONSIVE BREAKPOINTS
+$bp-hg: 112.5em; //1800px
+$bp-lg: 75em; //1200px
+$bp-md: 62.5em; //1000
+$bp-sm: 75em;
+
 *,
 *::before,
 *::after {
@@ -30,7 +36,15 @@ $font-display: 'Josefin Sans', sans-serif;
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-hg) {
+    font-size: 60%;
+  }
+
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 50%
+  }
 }
 
 body {
@@ -48,6 +62,14 @@ body {
                          minmax(6rem, 1fr) [center-start]
                         repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) // each column will be between it's min-content width, going to a max of 14rem
                          [center-end] minmax(6rem, 1fr) [full-end];
+
+  @media only screen and (max-width: $bp-md) {
+    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content); // min-content allows the row to take up as much vertical room as the content
+    grid-template-columns: [full-start]  
+                         minmax(6rem, 1fr) [center-start]
+                        repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) // each column will be between it's min-content width, going to a max of 14rem
+                         [center-end] minmax(6rem, 1fr) [full-end];
+  }
  
 }
 
