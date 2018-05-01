@@ -23,8 +23,9 @@ $font-display: 'Josefin Sans', sans-serif;
 // RESPONSIVE BREAKPOINTS
 $bp-hg: 112.5em; //1800px
 $bp-lg: 75em; //1200px
-$bp-md: 62.5em; //1000
-$bp-sm: 75em;
+$bp-md: 62.5em; //1000px
+$bp-sm: 50em; //800px
+$bp-tiny: 31.25em; //500px
 
 // -------- SASS VARIABLES END --------
 
@@ -73,7 +74,10 @@ body {
                            [center-end] minmax(6rem, 1fr) [full-end];
     // Redo column layout for smaller screens, placing navigation sidebar at top
   }
- 
+
+  @media only screen and (max-width: $bp-sm) {
+    grid-template-rows: 8rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content);
+  } 
 }
 
 // --- Notes ---
