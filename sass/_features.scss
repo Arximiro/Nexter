@@ -7,6 +7,14 @@
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // auto-fit used with min-max for columns allows for easy responsive design
   grid-gap: 6rem;
   align-items: start; // aligns content inside each feature item to the top of their box
+
+  @include respond(tab-land) {
+    margin: 10rem 0;
+  }
+
+  @include respond(phone) {
+    margin: 7.5rem 0;
+  }
 }
 
 .feature {
